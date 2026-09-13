@@ -1,69 +1,56 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      {/* Hero Section */}
+      <section className="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-12 md:p-24 mb-16 shadow-2xl">
+        <div className="relative z-10 max-w-2xl">
+          <h1 className="font-spaceGrotesk text-5xl md:text-7xl font-bold tracking-tight mb-6">
+            Engineered for the Modern Consumer.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-slate-300 mb-8 font-light">
+            Discover our flagship collection. Minimalist design meets uncompromising performance.
           </p>
+          <div className="flex gap-4">
+            <Link href="/products" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-slate-900 bg-white hover:bg-slate-100 transition-colors duration-300">
+              Shop Catalogue
+            </Link>
+            <Link href="/about" className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-base font-medium rounded-full text-white hover:bg-white/10 transition-colors duration-300">
+              Our Story <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        {/* Abstract Background Element */}
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-blue-500/20 rounded-full blur-3xl" />
+      </section>
+
+      {/* Bento Grid Section */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+        <div className="md:col-span-2 glass-panel rounded-3xl p-8 relative overflow-hidden group cursor-pointer hover:shadow-2xl transition-all">
+          <h2 className="font-spaceGrotesk text-3xl font-bold mb-2 z-10 relative">New Arrivals</h2>
+          <p className="text-slate-600 z-10 relative">Explore the latest additions to our ecosystem.</p>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-slate-200 rounded-tl-[100px] transform group-hover:scale-105 transition-transform duration-500" />
         </div>
-      </main>
+        
+        <div className="glass-panel rounded-3xl p-8 bg-blue-600 text-white flex flex-col justify-between cursor-pointer hover:shadow-2xl transition-all hover:bg-blue-700">
+          <h3 className="font-spaceGrotesk text-2xl font-bold">Accessories</h3>
+          <ArrowRight className="w-8 h-8" />
+        </div>
+        
+        <div className="glass-panel rounded-3xl p-8 bg-slate-100 flex flex-col justify-between cursor-pointer hover:shadow-2xl transition-all">
+           <h3 className="font-spaceGrotesk text-2xl font-bold text-slate-900">Essentials</h3>
+           <p className="text-slate-500">Everyday carry, refined.</p>
+        </div>
+        
+        <div className="md:col-span-2 glass-panel rounded-3xl p-8 relative overflow-hidden group cursor-pointer hover:shadow-2xl transition-all">
+          <h2 className="font-spaceGrotesk text-3xl font-bold mb-2 relative z-10">Premium Audio</h2>
+          <p className="text-slate-600 relative z-10">Hear the difference with our bespoke drivers.</p>
+           <div className="absolute top-1/2 right-8 -translate-y-1/2 w-48 h-48 bg-slate-800 rounded-full transform group-hover:rotate-12 transition-transform duration-500" />
+        </div>
+      </section>
     </div>
   );
 }
